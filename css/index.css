@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --primaria: #2C3E50;    /* Azul Petróleo */
+    --fundo: #ECF0F1;       /* Cinza Claro */
+    --destaque: #16A085;    /* Verde Água */
+    --texto: #34495E;       /* Um cinza azulado para o texto não ser preto puro */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ECF0F1;
+    font-family: 'Inter', sans-serif;;
+}
+
