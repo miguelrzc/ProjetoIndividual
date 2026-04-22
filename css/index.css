@@ -1,20 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
 
 :root {
-    --primaria: #2C3E50;    /* Azul Petróleo */
-    --fundo: #ECF0F1;       /* Cinza Claro */
-    --destaque: #16A085;    /* Verde Água */
-    --texto: #34495E;       /* Um cinza azulado para o texto não ser preto puro */
+    --primaria: #2C3E50;
+    --fundo: #ECF0F1;
+    --destaque: #16A085;
+    --texto: #34495E;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
-body{
-    background-color: #ECF0F1;
-    font-family: 'Inter', sans-serif;;
+body {
+    background-color: var(--fundo);
+    font-family: 'Inter', sans-serif;
 }
 
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.ul {
+    display: flex; 
+    align-items: center;
+}
+
+.ul li {
+    margin-left: 35px;
+}
+
+.ul li a {
+    color: var(--texto);
+}
+
+.btn-gradiente {
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--destaque);
+    color: white;
+    border-radius: 4px;
+}
