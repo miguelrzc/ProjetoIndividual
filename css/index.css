@@ -46,26 +46,111 @@ nav {
     color: var(--texto);
 }
 
-.btn-gradiente {
+header {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.logo a{
+    color: #34495E;
+    font-size: 2rem;
+}
+.logo a span{
+    color: #16A085;
+}
+
+.btn-principal {
     padding: 10px 25px;
     border: none;
     cursor: pointer;
     background-color: var(--destaque);
     color: white;
-    border-radius: 4px;
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 1500px;
+    
+}
+
+.btn-login{
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--destaque);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 10px
+    ;
+
+}
+
+.btn-login:hover {
+    background: var(--texto);
+    transform: translateY(-1px);
 }
 
 .hero-section{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    
 }
 
-.h1{
-    font-size: 3.5rem;
-    line-height: 1.1;
+
+h1{
+    padding-top: 10px;
+    font-size: 6rem;
 }
 
-.h2{
-    font-weight: lighter;
+h1 span{
+    color: var(--destaque);
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+    margin-top: 30px;
+}
+
+p { 
+        margin-top: 10px;
+
+}
+
+
+.hero-line {
+    width: 380px;
+    border-top: 2px dashed rgba(13,27,42,0.2);
+    margin: 20px 0;
+}
+
+ .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--texto-leve);
+    font-weight: 300;
+    max-width: 400px;
+    margin-bottom: 44px;
+ }
+
+.main-text{
+    flex: 1;
+    
+
+}
+
+.main-img{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-img img {
+    padding-top: 10px;
+    width: 550px;       
+    aspect-ratio: 1.1 / 1.3;
+    object-fit: cover;   
+     border-radius: 30px;
+
 }
