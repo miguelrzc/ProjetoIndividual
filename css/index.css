@@ -159,3 +159,10 @@ p {
      object-position: center bottom;
 
 }
+
+.peniel-section{
+    background-color: var(--primaria);
+    color: beige;
+    padding: 20px;
+
+}
