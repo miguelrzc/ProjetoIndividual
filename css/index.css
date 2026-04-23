@@ -174,4 +174,14 @@ p {
 }
 
 
+peniel-cards{
+    justify-content: flex-end;
 
+}
+
+card{
+    justify-content: flex-end;
+}
+card-num{
+    justify-content: flex-end;
+}
