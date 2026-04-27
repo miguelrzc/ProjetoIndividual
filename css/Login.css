@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap");
+:root {
+    --primaria: #2c3e50;
+    --fundo: #ecf0f1;
+    --destaque: #16a085;
+    --texto: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: var(--fundo);
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+}
+
+.ul li {
+    margin-left: 35px;
+}
+
+.ul li a {
+    color: var(--texto);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.logo a {
+    color: var(--texto);
+    font-size: 2rem;
+}
+
+.logo a span {
+    color: var(--destaque);
+}
+
+btn-login {
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--destaque);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 10;
+}
+
+.btn-login:hover {
+    background: var(--texto);
+    transform: translateY(-1px);
+}
