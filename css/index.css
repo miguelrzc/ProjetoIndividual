@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap");
 
 :root {
-    --primaria: #2C3E50;
-    --fundo: #ECF0F1;
-    --destaque: #16A085;
-    --texto: #34495E;
+    --primaria: #2c3e50;
+    --fundo: #ecf0f1;
+    --destaque: #16a085;
+    --texto: #34495e;
 }
 
 * {
@@ -17,7 +17,7 @@
 
 body {
     background-color: var(--fundo);
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -34,7 +34,7 @@ nav {
 }
 
 .ul {
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
@@ -44,19 +44,20 @@ nav {
 
 .ul li a {
     color: var(--texto);
-     position: relative;
+    position: relative;
     padding-bottom: 4px;
 }
 
 header {
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.logo a{
+.logo a {
     color: var(--texto);
     font-size: 2rem;
 }
-.logo a span{
+
+.logo a span {
     color: var(--destaque);
 }
 
@@ -70,10 +71,9 @@ header {
     margin-top: 30px;
     font-size: 1.5rem;
     font-weight: 100;
-    
 }
 
-.btn-login{
+.btn-login {
     padding: 10px 25px;
     border: none;
     cursor: pointer;
@@ -81,9 +81,7 @@ header {
     color: white;
     border-radius: 20px;
     font-size: 0.9rem;
-    font-weight: 10
-    ;
-
+    font-weight: 10;
 }
 
 .btn-login:hover {
@@ -91,97 +89,133 @@ header {
     transform: translateY(-1px);
 }
 
-.hero-section{
+.hero-section {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-     min-height: 90vh;
-    
-    
+    min-height: 90vh;
 }
 
-
-h1{
+h1 {
     font-size: 6rem;
 }
 
-h1 span{
+h1 span {
     color: var(--destaque);
     font-size: 6rem;
 }
 
 h2 {
     font-size: 2.3rem;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
-p { 
-        margin-top: 10px;
-
+p {
+    margin-top: 10px;
 }
-
 
 .hero-line {
     width: 380px;
-    border-top: 2px dashed rgba(13,27,42,0.2);
+    border-top: 2px dashed rgba(13, 27, 42, 0.2); 
     margin: 20px 0;
 }
 
- .hero-desc {
+.hero-desc {
     font-size: 1.05rem;
     line-height: 1.75;
     color: var(--texto-leve);
     font-weight: 300;
     max-width: 400px;
     margin-bottom: 44px;
- }
+}
 
- main {
+main {
     padding-top: 20px;
 }
 
-.main-text{
+.main-text {
     flex: 1;
-    
-
 }
 
-.main-img{
+.main-img {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-        padding-top: 20px;
-
+    padding-top: 20px;
 }
 
 .main-img img {
-    width: 550px;       
+    width: 550px;
     aspect-ratio: 1.15 / 1.3;
-    object-fit: cover;   
-     border-radius: 30px;
-     object-position: center bottom;
-
+    object-fit: cover;
+    border-radius: 30px;
+    object-position: center bottom;
 }
 
-.peniel-section{
+/* Lembrar de tirar o espaco que ta sobrando em branco, amtes do peniel section */
+
+.peniel-section {
     background-color: var(--primaria);
     color: var(--fundo);
     padding: 100px 0;
 }
 
-.peniel-section p{
+.peniel-section p {
     justify-content: flex-start;
 }
 
-
-peniel-cards{
-    justify-content: flex-end;
-
+.peniel-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-card{
-    justify-content: flex-end;
+.card {
+    border: 1px solid rgba(236, 240, 241, 0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
 }
-card-num{
-    justify-content: flex-end;
+
+.card:hover {
+    background: var(--texto);
+    transform: translateY(-4px); /* Lembrar de alterar, deixar mais suave e pra direita */
+}
+
+.card-num {
+    color: var(--destaque);
+}
+
+.peniel-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.peniel-texto {
+    flex: 1;
+}
+
+.peniel-section h2 {
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+
+.genesis32 {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 24px;
+}
+
+.peniel-texto p {
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.peniel-linha {
+    width: 60px;
+    border-top: 2px dashed rgba(236, 240, 241, 0.2);
+    margin: 24px 0;
 }
