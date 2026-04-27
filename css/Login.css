@@ -65,7 +65,7 @@ btn-login {
     border: none;
     cursor: pointer;
     background-color: var(--destaque);
-    color: white;
+    color: rgb(255, 255, 255);
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 10;
@@ -74,4 +74,9 @@ btn-login {
 .btn-login:hover {
     background: var(--texto);
     transform: translateY(-1px);
+}
+
+.containerLogin{
+    display: flex;
+    margin-top: 10px;
 }
