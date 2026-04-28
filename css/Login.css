@@ -17,6 +17,8 @@
 body {
     background-color: var(--fundo);
     font-family: "Inter", sans-serif;
+    height: 100vh;
+    
 }
 
 .container {
@@ -79,4 +81,9 @@ btn-login {
 .containerLogin{
     display: flex;
     margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+
 }
+
