@@ -95,12 +95,24 @@ btn-login {
 }
 
 .card-titulo{
-    font-size: 36px;
+    font-size: 2rem;
     color: var(--texto);
+    margin-bottom: 6px;
     
 }
 
-/* Precisa estilizar a TAG P */
+.card-subTitulo{
+    font-size: 0.9rem;
+    padding-top: 10px;
+    color: var(--texto) ;
+    margin-bottom: 36px;
+}
+
+.card-line{
+    width: 100%;
+    border-top: 2px dashed var(--texto);
+    margin-bottom: 32px;
+}
 
 .input-box{
     position: relative;
