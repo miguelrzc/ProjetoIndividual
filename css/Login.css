@@ -96,6 +96,7 @@ btn-login {
 
 .card-titulo{
     font-size: 36px;
+    color: var(--texto);
     
 }
 
@@ -120,3 +121,31 @@ btn-login {
     background: var(--fundo);
     padding: 20px 45px 20px 20px;
 }
+
+.input-box input::placeholder{
+    color: var(--texto);
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+}
+
+.login{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: var(--primaria);
+    color: white;
+    
+}
+
+.login:hover{
+    background-color: var(--destaque);
+    border: 2px solid;
+    color: white;
+    transition: 0.5s;
+ }
