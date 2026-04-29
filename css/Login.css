@@ -78,12 +78,45 @@ btn-login {
     transform: translateY(-1px);
 }
 
-.containerLogin{
+.containerLogin {
     display: flex;
-    margin-top: 10px;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px);
-
+    min-height: calc(100vh - 80px); /* a conta do container - a header */
 }
 
+.card-login{
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+    width: 420px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-titulo{
+    font-size: 36px;
+    
+}
+
+/* Precisa estilizar a TAG P */
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    color: var(--texto);
+    background: var(--fundo);
+    padding: 20px 45px 20px 20px;
+}
