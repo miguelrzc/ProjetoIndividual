@@ -4,6 +4,8 @@
     --fundo: #ecf0f1;
     --destaque: #16a085;
     --texto: #34495e;
+    --texto-leve: #7f8c8d;
+    --borda: rgba(44,62,80,0.1)
 }
 
 * {
@@ -54,6 +56,7 @@ header {
 }
 
 .logo a {
+    font-family: 'Playfair Display', serif;
     color: var(--texto);
     font-size: 2rem;
 }
@@ -62,7 +65,7 @@ header {
     color: var(--destaque);
 }
 
-btn-login {
+.btn-login {
     padding: 10px 25px;
     border: none;
     cursor: pointer;
@@ -89,29 +92,45 @@ btn-login {
     background-color: white;
     border: 2px solid transparent;
     border-radius: 10px;
-    padding: 10px;
+    padding: 40px 48px;
     width: 420px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-logo{
+    font-family: 'Playfair Display', serif;
+    color: var(--texto);
+    font-size: 1.4rem;
+    margin-bottom: 32px;
+    display: block;
+    
+    
+
+}
+
+.card-logo span{
+    color: var(--destaque);
 }
 
 .card-titulo{
     font-size: 2rem;
     color: var(--texto);
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     
 }
 
 .card-subTitulo{
     font-size: 0.9rem;
-    padding-top: 10px;
+    padding-top: 3px;
     color: var(--texto) ;
     margin-bottom: 36px;
 }
 
 .card-line{
     width: 100%;
-    border-top: 2px dashed var(--texto);
+    border-top: 2px dashed rgba(44,62,80,0.1);
     margin-bottom: 32px;
+    margin-top: 30px;
 }
 
 .input-box{
@@ -161,3 +180,35 @@ btn-login {
     color: white;
     transition: 0.5s;
  }
+
+ .link-cadastro{
+    color: var(--texto-leve);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+ }
+
+ .link-cadastro a{
+    color: var(--destaque);
+ }
+
+ .versotxt{
+    font-family: 'Playfair Display', serif;
+    color: var(--texto);
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 0;
+ }
+
+ .versoNum{
+
+    text-align: center;
+    padding-top: 8px;
+    color: var(--destaque);
+    font-size: 0.9rem;
+ }
+
+ 
+ 
+ 
