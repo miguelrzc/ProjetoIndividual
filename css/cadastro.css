@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap");
+:root {
+    --primaria: #2c3e50;
+    --fundo: #ecf0f1;
+    --destaque: #16a085;
+    --texto: #34495e;
+    --texto-leve: #7f8c8d;
+    --borda: rgba(44,62,80,0.1)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: var(--fundo);
+    font-family: "Inter", sans-serif;
+    min-height: 80vh;
+    
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+}
+
+.ul li {
+    margin-left: 35px;
+}
+
+.ul li a {
+    color: var(--texto);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    color: var(--texto);
+    font-size: 2rem;
+}
+
+.logo a span {
+    color: var(--destaque);
+}
+
+.btn-login {
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--destaque);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 10;
+}
+
+.btn-login:hover {
+    background: var(--texto);
+    transform: translateY(-1px);
+}
+
+.containerLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* a conta do container - a header */
+    padding: 40px 0;
+}
+
+.card-login{
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 40px 48px;
+    width: 420px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    align-self: center;
+}
+
+.card-logo{
+    font-family: 'Playfair Display', serif;
+    color: var(--texto);
+    font-size: 1.4rem;
+    margin-bottom: 32px;
+    display: block;
+    
+    
+
+}
+
+.card-logo span{
+    color: var(--destaque);
+}
+
+.card-titulo{
+    font-size: 2rem;
+    color: var(--texto);
+    margin-bottom: 2px;
+    
+}
+
+.card-subTitulo{
+    font-size: 0.9rem;
+    padding-top: 3px;
+    color: var(--texto) ;
+    margin-bottom: 36px;
+}
+
+.card-line{
+    width: 100%;
+    border-top: 2px dashed rgba(44,62,80,0.1);
+    margin-bottom: 32px;
+    margin-top: 30px;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 15px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    color: var(--texto);
+    background: var(--fundo);
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: var(--texto);
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+}
+
+.login{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: var(--primaria);
+    color: white;
+    
+}
+
+.login:hover{
+    background-color: var(--destaque);
+    border: 2px solid;
+    color: white;
+    transition: 0.5s;
+ }
+
+ .link-cadastro{
+    color: var(--texto-leve);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+ }
+
+ .link-cadastro a{
+    color: var(--destaque);
+ }
+
+ .versotxt{
+    font-family: 'Playfair Display', serif;
+    color: var(--texto);
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 0;
+ }
+
+ .versoNum{
+
+    text-align: center;
+    padding-top: 8px;
+    color: var(--destaque);
+    font-size: 0.9rem;
+ }
+
+ 
+ 
+ 
