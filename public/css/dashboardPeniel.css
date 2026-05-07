@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap");
+:root {
+    --primaria: #2c3e50;
+    --fundo: #ecf0f1;
+    --destaque: #16a085;
+    --texto: #34495e;
+    --texto-leve: #7f8c8d;
+    --borda: rgba(44,62,80,0.1)
+}
+
+.container-principal{
+    padding: 30px 8%;
+    background-color: var(--fundo);
+}
+
+.indicadores{
+    display: flex;
+    margin-top: 30px;
+}
+
+.card-indicadores{
+    flex: 1;
+    background-color: var(--fundo);
+    border-radius: 12px;
+    border-bottom: var(--destaque);
+}
+
+.graficos{
+    display: grid;
+    margin-top: 40px;
+}
+
