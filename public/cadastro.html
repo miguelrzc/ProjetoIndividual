@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Login.css" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./css/cadastro.css" />
+  <body>
+    <header class="background-cinza">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <a
+              href="index.html"
+              style="display: flex; align-items: center; text-decoration: none"
+            >
+              <span style="color: #4a5568; font-weight: bold; font-size: 24px"
+                >Peniel<span style="color: #2eb29b">.</span></span
+              >
+              <img
+                src="img/book.png"
+                alt="Logo"
+                style="width: 25px; margin-right: 10px"
+              />
+            </a>
+          </div>
+
+          <ul class="ul">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Meu Devocional</a></li>
+            <li><a href="#">Histórico</a></li>
+            <li>
+              <button class="btn-login">Login</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="containerLogin">
+        <div class="card-login">
+          <form>
+            <span class="card-logo"> Peniel<span>.</span></span>
+            <h1 class="card-titulo">Criar Conta</h1>
+            <p class="card-subTitulo">Comece sua jornada gratuitamente.</p>
+
+            <div class="card-line"></div>
+            <!-- Linha de divisão -->
+
+            <div class="input-box">
+              <input id="idNome" type="text" placeholder="Seu nome" />
+              <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+              <input id="idEmail" type="email" placeholder="Peniel@email.com" />
+              <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+              <input id="idSenha" type="password" placeholder="Senha" />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="input-box">
+              <input
+                id="idConfirmarSenha"
+                type="password"
+                placeholder="Confirme sua Senha"
+              />
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div>
+              <button type="submit" class="login">Criar Conta</button>
+            </div>
+            <div class="link-cadastro">
+              <p>Já tem uma conta? <a href="#">Fazer Login</a></p>
+            </div>
+
+            <div class="card-line"></div>
+            <!-- Linha antes do verisiculo -->
+
+            <div class="versotxt">
+              "Porque me viu a face de Deus e a minha vida foi preservada."
+            </div>
+            <div class="versoNum">Gênesis 32:30</div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = idNome.value;
+    var emailVar = idEmail.value;
+    var senhaVar = idSenha.value;
+    var confirmacaoSenhaVar = idConfirmarSenha.value;
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+      console.log("(Mensagem de erro para todos os campos em branco)");
+
+      return false;
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          setTimeout(() => {
+            window.location = "./Login.html";
+          }, "2000");
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+</script>
