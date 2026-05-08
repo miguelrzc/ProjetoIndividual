@@ -148,7 +148,7 @@ header {
     border-radius: 40px;
     outline: none;
     font-size: 16px;
-    color: var(--fundo);
+    color: var(--texto);
     background: var(--fundo);
     padding: 20px 45px 20px 20px;
 }
