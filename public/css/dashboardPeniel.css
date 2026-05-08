@@ -28,5 +28,9 @@
 .graficos{
     display: grid;
     margin-top: 40px;
+    max-height: 300px;
 }
 
+.box-grafico{
+    height: 300px;
+}

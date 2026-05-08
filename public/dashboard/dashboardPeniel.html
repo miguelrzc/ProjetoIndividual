@@ -1,42 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Peniel</title>
+    <link rel="stylesheet" href="../css/dashboardPeniel.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="container-principal">
+      <header>
+        <h1>Dashboard Peniel</h1>
+      </header>
 
-<main class="container-principal"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<link rel="stylesheet" href="../css/dashboardPeniel.css">    
-<!-- Personalizar uma header somente pra essa telaa -->
-    <header>
+      <section class="indicadores">
+        <div class="card-indicadores">
+          <h3>Sequência 🔥</h3>
+          <p><span id="sequenciaAtual">10</span> Dias</p>
+        </div>
+        <div class="card-indicadores">
+          <h3>Devocionais 📖</h3>
+          <p><span>Concluídos: 24</span></p>
+        </div>
+      </section>
 
-    </header>
-    <section class="indicadores">
-<div class="card-indicadores">
-        <h3>Sequência</h3>
-        <p> <span id="sequenciaAtual">10</span> Dias </p>
-</div>
-
-<div class="card-indicadores">
-    <h3>Devocionais 📖</h3>
-    <p> <span>Devocionais Concluidos: 0</span> </p>
-</div>
-    </section>
-
-    <section class="graficos">
-        <div class="box-grafico"> 
-            <h3>Tema mais Estudados:</h3>
-            <p> Sabedoria</p>
-            <canvas id="graficoPizza"></canvas>
+      <section class="graficos">
+        <div class="box-grafico">
+          <h3>Temas Estudados</h3>
+          <canvas id="graficoPizza"></canvas>
         </div>
         <div class="box-grafico">
-            <h3>Frequência Semanal</h3>
-            <canvas id="graficoLinha"></canvas>
+          <h3>Frequência Semanal</h3>
+          <canvas id="graficoLinha"></canvas>
         </div>
-    </section>
+      </section>
+    </main>
 
-</body>
+    <script src="../js/dashboardPeniel.js"></script>
+  </body>
 </html>
-</main>
