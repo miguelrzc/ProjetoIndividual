@@ -137,11 +137,17 @@ p span{
 }
 
 .graficos{
-    display: grid;
+    display: flex;
     margin-top: 40px;
-    max-height: 300px;
+    width: 70%;
+    gap: 100px;
+
+       
+    
 }
 
 .box-grafico{
-    height: 300px;
+    width: 70%;
+
+    
 }
