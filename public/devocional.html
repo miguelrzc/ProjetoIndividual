@@ -60,6 +60,53 @@
 
 <script>
 function salvar(){
+        // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var versiculoVar = input_versiculo.value;
+    var reflexaoVar = input_reflexao.value;
+ 
+
+    // Verificando se há algum campo em branco
+
     
-}
+    if (
+      versiculoVar == "" ||
+      reflexaoVar == "") 
+      {
+      console.log("(Mensagem de erro para todos os campos em branco)");
+
+      return false;
+    }
+
+    // Enviando o valor da nova input
+    fetch("/devocionais/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        versiculoServer: versiculoVar,
+        reflexaoServer: reflexaoVar,        
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert("Devocional Salvo")  
+          window.location = "./devocional.html";
+        } else {
+          throw "Houve um erro ao tentar salvar!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
 </script>
