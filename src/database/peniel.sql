@@ -10,7 +10,7 @@ CREATE TABLE usuarios (
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE devocionais (
+CREATE TABLE devocional (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fk_usuario INT,
     fk_passagem INT,
@@ -21,6 +21,7 @@ CREATE TABLE devocionais (
     CONSTRAINT fk_pass_dev FOREIGN KEY (fk_passagem) REFERENCES passagens(id),
     CONSTRAINT fk_cat_dev FOREIGN KEY (fk_categoria) REFERENCES categorias(id)
 );
+
 
 CREATE TABLE categorias (
     id INT PRIMARY KEY AUTO_INCREMENT,

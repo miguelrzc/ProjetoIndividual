@@ -44,7 +44,7 @@
 
         <div class="campo">
             <div class="campo-titulo">Versículo</div>
-            <input type="text" id="input-versiculo" placeholder='Ex: "O Senhor é o meu pastor."'>
+            <input type="text" id="input_versiculo" placeholder='Ex: "O Senhor é o meu pastor."'>
         </div>
 
         <div class="campo">
@@ -59,54 +59,49 @@
 </div>
 
 <script>
-function salvar(){
-        // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+function salvar() {
     var versiculoVar = input_versiculo.value;
     var reflexaoVar = input_reflexao.value;
- 
-
-    // Verificando se há algum campo em branco
-
     
-    if (
-      versiculoVar == "" ||
-      reflexaoVar == "") 
-      {
-      console.log("(Mensagem de erro para todos os campos em branco)");
+    var categoriaVar = 1; 
+    
+    var idUsuarioVar = sessionStorage.ID_USUARIO;
 
-      return false;
+    if (versiculoVar == "" || reflexaoVar == "") {
+        alert("Preencha todos os campos!");
+        return false;
     }
 
-    // Enviando o valor da nova input
-    fetch("/devocionais/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        versiculoServer: versiculoVar,
-        reflexaoServer: reflexaoVar,        
-      }),
+    fetch("/devocional/registrar", { 
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            versiculoServer: versiculoVar,
+            reflexaoServer: reflexaoVar,
+            categoriaServer: categoriaVar, 
+            usuarioServer: idUsuarioVar    
+        }),
     })
-      .then(function (resposta) {
+    .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("Devocional Salvo")  
-          window.location = "./devocional.html";
+            alert("Devocional Salvo com sucesso!");  
+            window.location = "./devocional.html";
         } else {
-          throw "Houve um erro ao tentar salvar!";
+            resposta.text().then(texto => {
+                console.error("Erro técnico:", texto);
+                alert("Erro ao salvar: " + texto);
+            });
         }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+    })
+    .catch(function (erro) {
+        console.log(`#ERRO: ${erro}`);
+    });
 
     return false;
-  }
+}
+
 </script>
