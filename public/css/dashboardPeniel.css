@@ -93,24 +93,25 @@ h1 span{
     font-family: 'Playfair Display', serif; ;
 }
 
+
+
 header p{
     font-family: 'Playfair Display', serif;
     color: var(--texto);
+    padding-bottom: 10px;
 
 
 }
 
 p{
     font-family: 'Playfair Display', serif;
+    color: var(--texto);
 }
 
 p span{
     color: var(--destaque);
     font-family: 'Playfair Display', serif;
 }
-
-
-
 
 .containerLogin {
     display: flex;
@@ -143,6 +144,14 @@ p span{
 
 }
 
+.card-indicadores h3{
+    color: var(--texto);
+}
+
+.card-indicadores p{
+    color:  var(--destaque);
+}
+
 .graficos{
     display: flex;
     margin-top: 40px;
@@ -155,6 +164,12 @@ p span{
 
 .box-grafico{
     width: 70%;
+    justify-content: center;
 
     
+}
+
+.box-grafico h3{
+    color: var(--texto);
+    font-size: 1.3em;
 }
