@@ -1,113 +1,132 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peniel.</title>
-    <link rel="stylesheet" href="./css/devocional.css">
-    <link rel="icon" type="image/png" href="img/book.png?v=3"> <!-- Nao esta ficando no safari, ver se é o navegador, se nao arrumar!!!! -->
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peniel.</title>
+  <link rel="stylesheet" href="./css/devocional.css" />
+  <link rel="icon" type="image/png" href="img/book.png?v=3" />
+  <!-- Nao esta ficando no safari, ver se é o navegador, se nao arrumar!!!! -->
 </head>
 <body>
-
- <header class="background-cinza">
+  <header class="background-cinza">
     <div class="container">
-        <nav>
-            <div class="logo">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-     <span style="color: #4A5568; font-weight: bold; font-size: 24px;">Peniel<span style="color: #2eb29b;">.</span></span>
-                    <img src="img/book.png" alt="Logo" style="width: 25px; margin-right: 10px;">
-                </a>
-            </div>
-
-
-                <ul class="ul">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="devocional.html">Meu Devocional</a></li>
-                    <li><a href="dashboard/dashboardPeniel.html">Histórico</a></li>
-                    <li>
-                        <a href="Login.html">
-                     <button class="btn-login">Login</button>
-                    </a>
-                    </li>
-                </ul>
-            </nav>
+      <nav>
+        <div class="logo">
+          <a
+            href="index.html"
+            style="display: flex; align-items: center; text-decoration: none"
+          >
+            <span style="color: #4a5568; font-weight: bold; font-size: 24px"
+              >Peniel<span style="color: #2eb29b">.</span></span
+            >
+            <img
+              src="img/book.png"
+              alt="Logo"
+              style="width: 25px; margin-right: 10px"
+            />
+          </a>
         </div>
-    </header>
 
-<div class="container">
+        <ul class="ul">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="devocional.html">Meu Devocional</a></li>
+          <li><a href="dashboard/dashboardPeniel.html">Histórico</a></li>
+          <li>
+            <a href="Login.html">
+              <button class="btn-login">Login</button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
     <div class="topo">
-        <h1>Novo <span>Devocional</span></h1>
-        <p id="data"></p>
+      <h1>Novo <span>Devocional</span></h1>
+      <p id="data"></p>
     </div>
 
-    <div class="form-card"> 
-        <div class="reflexao"> — ESCREVA SUA REFLEXÃO</div>
+    <div class="form-card">
+      <div class="reflexao">— ESCREVA SUA REFLEXÃO</div>
 
-        <div class="campo">
-            <div class="campo-titulo">Passagemk</div>
-            <input type="text" id="input_versiculo" placeholder='Ex: "O Senhor é o meu pastor."'>
-        </div>
+      <div class="campo">
+        <div class="campo-titulo">Passagemk</div>
+        <input
+          type="text"
+          id="input_versiculo"
+          placeholder='Ex: "O Senhor é o meu pastor."'
+        />
+      </div>
 
-        <div class="campo">
-            <div class="campo-titulo">Reflexão</div>
-            <textarea id="input_reflexao" placeholder="O que eu aprendi hoje?"></textarea>
+      <div class="campo">
+        <div class="campo-titulo">Reflexão</div>
+        <textarea
+          id="input_reflexao"
+          placeholder="O que eu aprendi hoje?"
+        ></textarea>
+      </div>
 
-        <select>Selecionar Categoria</select>
+      <div class="campo">
+        <div class="campo-titulo">Categoria</div>
+        <select id="select_categoria">
+          <option value="" disabled selected>Selecionar Categoria</option>
+          <option value="1">Fé</option>
+          <option value="2">Gratidão</option>
+          <option value="3">Oração</option>
+          <option value="4">Estudo Bíblico</option>
+        </select>
+      </div>
 
-        </div>
+      <button class="btn-salvar" onclick="salvar()">
+        Salvar meu <span>Devocional</span>
+      </button>
+    </div>
+  </div>
 
+  <script>
+    function salvar() {
+      var versiculoVar = input_versiculo.value;
+      var reflexaoVar = input_reflexao.value;
 
+      var categoriaVar = select_categoria.value;
 
-        <button class="btn-salvar" onclick="salvar()">Salvar meu <span>Devocional</span></button>
+      var idUsuarioVar = sessionStorage.ID_USUARIO;
 
-
-    </div> 
-    
-</div>
-
-<script>
-function salvar() {
-    var versiculoVar = input_versiculo.value;
-    var reflexaoVar = input_reflexao.value;
-    
-    var categoriaVar = 1; 
-    
-    var idUsuarioVar = sessionStorage.ID_USUARIO;
-
-    if (versiculoVar == "" || reflexaoVar == "") {
-        alert("Preencha todos os campos!");
+      if (versiculoVar == "" || reflexaoVar == "" || categoriaVar == "") {
+        alert("Preencha todos os campos, incluindo a categoria!");
         return false;
-    }
+      }
 
-    fetch("/devocional/registrar", { 
+      fetch("/devocional/registrar", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            versiculoServer: versiculoVar,
-            reflexaoServer: reflexaoVar,
-            categoriaServer: categoriaVar, 
-            usuarioServer: idUsuarioVar    
+          versiculoServer: versiculoVar,
+          reflexaoServer: reflexaoVar,
+          categoriaServer: categoriaVar,
+          usuarioServer: idUsuarioVar,
         }),
-    })
-    .then(function (resposta) {
-        console.log("resposta: ", resposta);
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-            alert("Devocional Salvo com sucesso!");  
+          if (resposta.ok) {
+            alert("Devocional Salvo com sucesso!");
             window.location = "./devocional.html";
-        } else {
-            resposta.text().then(texto => {
-                console.error("Erro técnico:", texto);
-                alert("Erro ao salvar: " + texto);
+          } else {
+            resposta.text().then((texto) => {
+              console.error("Erro técnico:", texto);
+              alert("Erro ao salvar: " + texto);
             });
-        }
-    })
-    .catch(function (erro) {
-        console.log(`#ERRO: ${erro}`);
-    });
+          }
+        })
+        .catch(function (erro) {
+          console.log(`#ERRO: ${erro}`);
+        });
 
-    return false;
-}
-
-</script>
+      return false;
+    }
+  </script>
+</body>
