@@ -53,12 +53,22 @@ header {
 }
 
 .logo a {
-    color: var(--texto);
+    font-family: 'Playfair Display', serif; 
+    color: #34495e; 
     font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
 }
 
 .logo a span {
-    color: var(--destaque);
+    color: var(--destaque); 
+}
+
+.logo img {
+    width: 25px;
+    margin-left: 10px;
+    height: auto;
 }
 
 .btn-principal {
@@ -153,7 +163,6 @@ main {
     object-position: center bottom;
 }
 
-/* Lembrar de tirar o espaco que ta sobrando em branco, amtes do peniel section */
 
 .peniel-section {
     background-color: var(--primaria);
@@ -165,11 +174,13 @@ main {
     justify-content: flex-start;
 }
 
-.peniel-cards {
+.card-passo {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    background-color: var(--);
+    border-radius: 10px;
 }
 
 .card {
@@ -203,7 +214,7 @@ main {
     margin-top: 0;
 }
 
-.genesis32 {
+.bloco-versiculo {
     font-size: 0.9rem;
     font-style: italic;
     opacity: 0.7;
@@ -219,4 +230,164 @@ main {
     width: 60px;
     border-top: 2px dashed rgba(236, 240, 241, 0.2);
     margin: 24px 0;
+}
+
+.info-section {
+    background: var(--primaria);
+    color: var(--fundo);
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    border-left: 2px dashed rgba(236,240,241,0.06);
+    pointer-events: none;
+}
+
+.info-section .topo {
+    margin-bottom: 35px;
+}
+
+.info-section .conceito {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-section .conceito::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 2px;
+    background: var(--destaque);
+}
+
+.info-section .topo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--fundo);
+    margin: 0;
+}
+
+.info-section .topo h2 span {
+    font-style: italic;
+    color: var(--destaque);
+    font-size: 2.5rem;
+}
+
+.info-section .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: stretch; 
+
+}
+
+.info-section .bloco-conteudo {
+    margin-bottom: 40px;
+}
+
+.info-section .bloco-conteudo h3 {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-section .bloco-conteudo h3::before {
+    content: '';
+    display: inline-block;
+    width: 14px; height: 2px;
+    background: var(--destaque);
+}
+
+.info-section .bloco-conteudo p {
+    font-size: 0.98rem;
+    line-height: 1.85;
+    color: rgba(236,240,241,0.65);
+    font-weight: 300;
+    margin: 0 0 10px 0;
+}
+
+.info-section .hebraico {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: rgba(236,240,241,0.06);
+    line-height: 1;
+    margin-bottom: -16px;
+    user-select: none;
+}
+
+.info-section .bloco-versiculo p {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(236,240,241,0.4);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.info-section .grid-direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    margin-top: -120px;          
+    gap: 16px;
+}
+
+.info-section .card-passo {
+    border: 1px solid rgba(236,240,241,0.08);
+    border-radius: 16px;
+    padding: 24px 28px;
+    background: rgba(236,240,241,0.03); 
+    transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    cursor: default;
+}
+
+.info-section .card-passo:hover {
+    background: rgba(236,240,241,0.06);   
+    border-color: rgba(22,160,133,0.35);  
+    transform: translateX(6px);            
+}
+
+.info-section .card-num {
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 8px;
+}
+
+.info-section .card-passo h3 {
+    font-size: 1.05rem;
+    color: var(--fundo);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.info-section .card-passo p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: rgba(236,240,241,0.45);
+    font-weight: 300;
+    margin-top: 0;
 }

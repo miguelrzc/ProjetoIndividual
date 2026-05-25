@@ -1,5 +1,4 @@
 CREATE DATABASE peniel;
-
 USE peniel;
 
 CREATE TABLE usuarios (
@@ -10,37 +9,36 @@ CREATE TABLE usuarios (
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE devocional (
+CREATE TABLE metas (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    fk_usuario INT,
-    fk_passagem INT,
-    fk_categoria INT,
-    reflexao TEXT,
-    data_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT fk_usu_dev FOREIGN KEY (fk_usuario) REFERENCES usuarios(id),
-    CONSTRAINT fk_pass_dev FOREIGN KEY (fk_passagem) REFERENCES passagens(id),
-    CONSTRAINT fk_cat_dev FOREIGN KEY (fk_categoria) REFERENCES categorias(id)
+    fk_usuario INT UNIQUE, 
+    meta_total INT DEFAULT 20, 
+    CONSTRAINT fk_usu_meta FOREIGN KEY (fk_usuario) REFERENCES usuarios(id)
 );
-
 
 CREATE TABLE categorias (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE passagens (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    livro VARCHAR(50) NOT NULL,
-    capitulo INT NOT NULL,
-    versiculo INT NOT NULL,
-    texto TEXT NOT NULL
-);
-
-CREATE TABLE streaks (
+CREATE TABLE devocional (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fk_usuario INT,
-    data_ultima_entrada DATE,
-    sequencia_atual INT DEFAULT 0,
-    CONSTRAINT fk_usu_streak FOREIGN KEY (fk_usuario) REFERENCES usuarios(id)
+    fk_categoria INT,
+    versiculo_texto VARCHAR(255), 
+    reflexao TEXT,
+    data_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_usu_dev FOREIGN KEY (fk_usuario) REFERENCES usuarios(id),
+    CONSTRAINT fk_cat_dev FOREIGN KEY (fk_categoria) REFERENCES categorias(id)
 );
 
+
+
+INSERT INTO categorias (nome) VALUES 
+('Fé'), 
+('Gratidão'), 
+('Oração'), 
+('Estudo Bíblico'),
+('Sabedoria'),
+('Propósito');

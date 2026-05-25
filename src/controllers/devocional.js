@@ -7,7 +7,7 @@ function registrar(req, res) {
     var fkUsuario = req.body.usuarioServer;
 
   if (versiculo == undefined) {
-    res.status(400).send("O Versículo está indefinida!");
+    res.status(400).send("O Versículo está indefinido!");
   } else if (fkUsuario == undefined) {
     res.status(400).send("Sua senha está indefinida!");
 } else { 
@@ -35,7 +35,7 @@ function buscarDadosGraficos(req, res) {
 function buscarCards(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    devocionalModel.buscarCards(idUsuario)
+    devocionalModel.obterCards(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => {
             console.log(erro);
@@ -43,7 +43,26 @@ function buscarCards(req, res) {
         });
 }
 
-module.exports = { registrar, buscarDadosGraficos, buscarCards };
+function obterTodosDevocionais(req, res) {
+    var idUsuario = req.params.idUsuario;
+
+    console.log("Buscando todos os devocionais do usuário no Controller, ID:", idUsuario);
+
+    devocionalModel.obterTodosDevocionais(idUsuario)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar os devocionais: ", erro.sqlMessage);
+            res.status(500).json(erro.core);
+        });
+}
+
+module.exports = { registrar, buscarDadosGraficos, buscarCards, obterTodosDevocionais };
 
 
   

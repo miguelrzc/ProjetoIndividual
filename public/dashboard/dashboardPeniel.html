@@ -8,16 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-     <header class="background-cinza">
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-     <span style="color: #4A5568; font-weight: bold; font-size: 24px;">Peniel<span style="color: #2eb29b;">.</span></span>
-                    <img src="img/book.png" alt="Logo" style="width: 25px; margin-right: 10px;">
-                </a>
-            </div>
-
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="../index.html">
+                        Peniel<span>.</span>
+                        <img src="../img/book.png" alt="Logo">
+                    </a>
+                </div>
 
                 <ul class="ul">
                     <li><a href="../index.html">Início</a></li>
@@ -25,47 +24,78 @@
                     <li><a href="./dashboardPeniel.html">Histórico</a></li>
                     <li>
                         <a href="Login.html">
-                     <button class="btn-login">Login</button>
-                    </a>
+                            <button class="btn-login">Login</button>
+                        </a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main class="container-principal">
-      <header>
-        <h1>Olá, <span>Usuário.</span></h1>
-        <p>'Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho' <br> <span>Salmos 119:105</span></p>
-      </header>
+      <section class="topo-dashboard">
+        <div class="boas-vindas">
+          <h1>Olá, <span>Usuário.</span></h1>
+          <p class="versiculo-destaque">'Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho'</p>
+          <span class="referencia-versiculo">Salmos 119:105</span>
+        </div>
+
+        <div class="container-select-meta">
+          <label for="select_meta">Minha Meta Total: </label>
+          <select id="select_meta" onchange="atualizarCardsTemporarios()">
+            <option value="10">10 Devocionais</option>
+            <option value="20" selected>20 Devocionais</option>
+            <option value="30">30 Devocionais</option>
+            <option value="50">50 Devocionais</option>
+          </select>
+        </div>
+      </section>
 
       <section class="indicadores">
         <div class="card-indicadores">
-          <h3>Sequência 🔥</h3>
-          <p><span id="sequenciaAtual">10 Dias</spanCDias</p>
+          <h3>Minha Meta 🎯</h3>
+          <p id="txt_meta">20</p>
         </div>
         <div class="card-indicadores">
           <h3>Devocionais 📖</h3>
-          <p><span>Concluídos: 24</span></p>
+          <p>Concluídos: <span id="txt_realizados">24</span></p>
         </div>
         <div class="card-indicadores">
-          <h3>Maior Sequência 🗓️</h3>
-          <p>30 Dias</p>
-
+          <h3>Progresso 📈</h3>
+          <p id="txt_porcentagem">120%</p>
         </div>
       </section>
 
       <section class="graficos">
         <div class="box-grafico">
           <h3>Temas Estudados</h3>
-          <canvas id="graficoPizza"></canvas>
+          <canvas id="grafico-barras"></canvas>
         </div>
         <div class="box-grafico">
           <h3>Progresso da Sequência</h3>
-          <canvas id="graficoLinha"></canvas>
+          <canvas id="grafico-linha"></canvas>
+        </div>
+      </section>
+
+      <section class="secao-historico-completo">
+        <h2>Meus Devocionais</h2>
+        
+        <div class="lista-cabecalho">
+          <span class="col-data">Data</span>
+          <span class="col-passagem">Passagem</span>
+          <span class="col-reflexao">Minha Reflexão</span>
+          <span class="col-categoria">Categoria</span>
+        </div>
+
+        <div class="scroll-historico">
+          <div id="lista_todos_devocionais">
+            </div>
         </div>
       </section>
     </main>
 
-<script src="../js/dashboardPeniel.js"></script>  
-</body>
+    <script src="../js/dashboardPeniel.js"></script>  
+  </body>
 </html>
+    
+

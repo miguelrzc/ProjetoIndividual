@@ -15,4 +15,8 @@ router.get("/cards/:idUsuario", function (req, res) {
     devocionalController.buscarCards(req, res);
 });
 
+router.get("/lista-completa/:idUsuario", function (req, res) {
+    devocionalController.obterTodosDevocionais(req, res);
+});
+
 module.exports = router;
