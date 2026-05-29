@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/Login.css" />
     <title>Document</title>
   </head>
@@ -31,14 +28,13 @@
             </a>
           </div>
 
-          <ul class="ul">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="devocional.html">Meu Devocional</a></li>
-            <li><a href="dashboard/dashboardPeniel.html">Histórico</a></li>
-            <li>
-              <button class="btn-login">Login</button>
-            </li>
-          </ul>
+          <div class="voltar">
+        <a href="index.html" style="text-decoration: none; color: #718096; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-arrow-left"></i> Voltar ao início
+        </a>
+      </div>
+
+
         </nav>
       </div>
     </header>
@@ -56,16 +52,16 @@
 
             <div class="input-box">
               <input id="idNome" type="text" placeholder="Seu nome" />
-              <i class="bx bxs-user"></i>
+             <i class="fa-solid fa-user"></i>
             </div>
 
             <div class="input-box">
               <input id="idEmail" type="email" placeholder="Peniel@email.com" />
-              <i class="bx bxs-user"></i>
+            <i class="fa-solid fa-envelope"></i>
             </div>
             <div class="input-box">
               <input id="idSenha" type="password" placeholder="Senha" />
-              <i class="bx bxs-lock-alt"></i>
+              <i class="fa-solid fa-lock"></i>
             </div>
             <div class="input-box">
               <input
@@ -73,7 +69,7 @@
                 type="password"
                 placeholder="Confirme sua Senha"
               />
-              <i class="bx bxs-lock-alt"></i>
+              <i class="fa-solid fa-lock"></i>
             </div>
             <div>
               <button type="button" onclick="cadastrar()" class="login">Criar Conta</button>
@@ -98,26 +94,18 @@
 
 <script>
   function cadastrar() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = idNome.value;
     var emailVar = idEmail.value;
     var senhaVar = idSenha.value;
     var confirmacaoSenhaVar = idConfirmarSenha.value;
 
-    // Verificando se há algum campo em branco
-
-    
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      console.log("(Mensagem de erro para todos os campos em branco)");
-
+      alert("Preencha todos os campos para prosseguir!");
       return false;
     }
 
@@ -126,25 +114,35 @@
         return false;
     }
 
-    // Enviando o valor da nova input
+  
+    var vetorSenha = [senhaVar]; 
+    var tamanhoSenha = 0;
+
+    for (var i = 0; i < vetorSenha[0].length; i++) {
+        tamanhoSenha++;
+    }
+
+    if (tamanhoSenha < 5) {
+        alert("A senha é muito curta! Ela precisa ter pelo menos 5 dígitos.");
+        return false;
+    }
+
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
+          alert("Cadastro realizado com sucesso! Redirecionando...");
           setTimeout(() => {
             window.location = "./Login.html";
           }, "2000");

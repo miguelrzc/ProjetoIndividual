@@ -3,15 +3,15 @@ var devocionalModel = require("../models/devocional");
 function registrar(req, res) {
     var versiculo = req.body.versiculoServer;
     var reflexao = req.body.reflexaoServer;
-    var fkCategoria = req.body.categoriaServer;
+    var categoriaText = req.body.categoriaServer; 
     var fkUsuario = req.body.usuarioServer;
 
-  if (versiculo == undefined) {
-    res.status(400).send("O Versículo está indefinido!");
-  } else if (fkUsuario == undefined) {
-    res.status(400).send("Sua senha está indefinida!");
-} else { 
-        devocionalModel.registrar(versiculo, reflexao, fkCategoria, fkUsuario)
+    if (versiculo == undefined) {
+        res.status(400).send("O Versículo está indefinido!");
+    } else if (fkUsuario == undefined) {
+        res.status(400).send("O ID do Usuário está indefinido!");
+    } else { 
+        devocionalModel.registrar(versiculo, reflexao, categoriaText, fkUsuario)
             .then(resultado => res.json(resultado))
             .catch(erro => {
                 console.log(erro);
@@ -20,11 +20,10 @@ function registrar(req, res) {
     }
 }
 
-
-function buscarDadosGraficos(req, res) {
+function obterDadosGrafico(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    devocionalModel.buscarDadosGraficos(idUsuario)
+    devocionalModel.buscarDadosGrafico(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => {
             console.log(erro);
@@ -32,10 +31,10 @@ function buscarDadosGraficos(req, res) {
         });
 }
 
-function buscarCards(req, res) {
+function obterCards(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    devocionalModel.obterCards(idUsuario)
+    devocionalModel.buscarCards(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => {
             console.log(erro);
@@ -48,7 +47,7 @@ function obterTodosDevocionais(req, res) {
 
     console.log("Buscando todos os devocionais do usuário no Controller, ID:", idUsuario);
 
-    devocionalModel.obterTodosDevocionais(idUsuario)
+    devocionalModel.buscarListaCompleta(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
@@ -57,12 +56,13 @@ function obterTodosDevocionais(req, res) {
             }
         }).catch(function (erro) {
             console.log(erro);
-            console.log("Houve um erro ao buscar os devocionais: ", erro.sqlMessage);
-            res.status(500).json(erro.core);
+            res.status(500).json(erro.sqlMessage);
         });
 }
 
-module.exports = { registrar, buscarDadosGraficos, buscarCards, obterTodosDevocionais };
-
-
-  
+module.exports = { 
+    registrar, 
+    obterDadosGrafico, 
+    obterCards, 
+    obterTodosDevocionais 
+};

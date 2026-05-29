@@ -2,7 +2,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peniel</title>
-    <link rel="stylesheet" href="./css/index.css" />    
+    <link rel="stylesheet" href="./css/index.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /> 
+
 </head>
 <body>
 
@@ -18,8 +20,8 @@
 
                 <ul class="ul">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="devocional.html">Meu Devocional</a></li>
-                    <li><a href="dashboard/dashboardPeniel.html">Histórico</a></li>
+                       <li><a href="#" onclick="verificarAcesso('devocional.html')">Meu Devocional</a></li>
+                       <li><a href="#" onclick="verificarAcesso('dashboard/dashboardPeniel.html')">Histórico</a></li>
                     <li>
                         <a href="Login.html">
                             <button class="btn-login">Login</button>
@@ -37,16 +39,17 @@
                 <div class="hero-line"></div>
                 <p class="hero-descPeniel">Peniel — Encontro com Deus</p>
                 <p class="hero-desc">
-                    Um space para ler, compreender e escrever. 
+                    Um Espaço para ler, compreender e escrever. 
                     Seu devocional diário guiado pela sabedoria 
-                    da Bíblia — flexível, pessoal e acessível.
+                    da Bíblia.
                 </p>
-                <button class="btn-principal">Começar meu Devocional</button>
+                <button onclick="window.location.href='cadastro.html'" class="btn-principal">Começar meu Devocional</button>
             </div>
 
             <div class="main-img">
                 <img src="img/hero.jpg" alt="Imagem principal">
             </div>
+
         </div>
     </main> 
 
@@ -86,7 +89,7 @@
                     </div>
 
                     <div class="bloco-versiculo">
-                        <p>"Porque me viu a face de Deus e a minha vida foi preservada." — Gênesis 32:30</p>
+                        <p>"Porque vi a face de Deus e a minha vida foi preservada." — Gênesis 32:30</p>
                     </div>
                 </div> <div class="grid-direita">
                     
@@ -118,3 +121,13 @@
 
 </body>
 </html>
+<script>
+  function verificarAcesso(destino) {
+    if (sessionStorage.ID_USUARIO == undefined) {
+      alert("Por favor, faça login para acessar essa página.");
+      window.location.href = "cadastro.html";
+    } else {
+      window.location.href = destino;
+    }
+  }
+</script>

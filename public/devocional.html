@@ -11,12 +11,12 @@
     <header>
       <div class="container">
         <nav>
-<div class="logo">
-    <a href="index.html">
-        Peniel<span>.</span>
-        <img src="img/book.png" alt="Logo">
-    </a>
-</div>
+          <div class="logo">
+            <a href="index.html">
+              Peniel<span>.</span>
+              <img src="img/book.png" alt="Logo" />
+            </a>
+          </div>
 
           <ul class="ul">
             <li><a href="index.html">Início</a></li>
@@ -63,12 +63,12 @@
             <div class="campo-titulo">Categoria</div>
             <select id="select_categoria">
               <option value="" disabled selected>Selecionar Categoria</option>
-              <option value="1">Fé</option>
-              <option value="2">Gratidão</option>
-              <option value="3">Oração</option>
-              <option value="4">Estudo Bíblico</option>
-              <option value="5">Sabedoria</option>
-              <option value="6">Propósito</option>
+              <option value="Fé">Fé</option>
+              <option value="Gratidão">Gratidão</option>
+              <option value="Oração">Oração</option>
+              <option value="Estudo Bíblico">Amor</option>
+              <option value="Sabedoria">Sabedoria</option>
+              <option value="Propósito">Propósito</option>
             </select>
           </div>
 
@@ -86,7 +86,9 @@
           <div class="info-lista">
             <div class="info-item">
               <span class="numero">01</span>
-              <p>Leia a passagem com calma, analisando cada detalhe e contexto.</p>
+              <p>
+                Leia a passagem com calma, analisando cada detalhe e contexto.
+              </p>
             </div>
 
             <div class="info-item">
@@ -96,7 +98,10 @@
 
             <div class="info-item">
               <span class="numero">03</span>
-              <p>Escreva com sinceridade, precisa ser algo que faça sentido na sua vida.</p>
+              <p>
+                Escreva com sinceridade, precisa ser algo que faça sentido na
+                sua vida.
+              </p>
             </div>
 
             <div class="info-item">
@@ -107,54 +112,52 @@
         </div>
       </div>
     </main>
-
-      </body>
+  </body>
 </html>
 
-    <script>
-      function salvar() {
-        var versiculoVar = input_versiculo.value;
-        var reflexaoVar = input_reflexao.value;
+<script>
+  function salvar() {
+    var versiculoVar = input_versiculo.value;
+    var reflexaoVar = input_reflexao.value;
 
-        var categoriaVar = select_categoria.value;
+    var categoriaVar = select_categoria.value;
 
-        var idUsuarioVar = sessionStorage.ID_USUARIO;
+    var idUsuarioVar = sessionStorage.ID_USUARIO;
 
-        if (versiculoVar == "" || reflexaoVar == "" || categoriaVar == "") {
-          alert("Preencha todos os campos, incluindo a categoria!");
-          return false;
-        }
+    if (versiculoVar == "" || reflexaoVar == "" || categoriaVar == "") {
+      alert("Preencha todos os campos, incluindo a categoria!");
+      return false;
+    }
 
-        fetch("/devocional/registrar", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            versiculoServer: versiculoVar,
-            reflexaoServer: reflexaoVar,
-            categoriaServer: categoriaVar,
-            usuarioServer: idUsuarioVar,
-          }),
-        })
-          .then(function (resposta) {
-            console.log("resposta: ", resposta);
+    fetch("/devocional/registrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        versiculoServer: versiculoVar,
+        reflexaoServer: reflexaoVar,
+        categoriaServer: categoriaVar,
+        usuarioServer: idUsuarioVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
 
-            if (resposta.ok) {
-              alert("Devocional Salvo com sucesso!");
-              window.location = "dashboard/dashboardPeniel.html";
-            } else {
-              resposta.text().then((texto) => {
-                console.error("Erro técnico:", texto);
-                alert("Erro ao salvar: " + texto);
-              });
-            }
-          })
-          .catch(function (erro) {
-            console.log(`#ERRO: ${erro}`);
+        if (resposta.ok) {
+          alert("Devocional Salvo com sucesso!");
+          window.location = "dashboard/dashboardPeniel.html";
+        } else {
+          resposta.text().then((texto) => {
+            console.error("Erro técnico:", texto);
+            alert("Erro ao salvar: " + texto);
           });
+        }
+      })
+      .catch(function (erro) {
+        console.log(`#ERRO: ${erro}`);
+      });
 
-        return false;
-      }
-    </script>
-
+    return false;
+  }
+</script>

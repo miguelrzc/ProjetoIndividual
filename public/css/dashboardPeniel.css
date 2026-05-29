@@ -247,3 +247,9 @@ nav {
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+.status-ruim { border-left: 5px solid #e74c3c; background: #fff1f0; }
+.status-bom { border-left: 5px solid #2ecc71; background: #f0fff4; }
+
+.status-ruim::before { content: "⚠️ "; }
+.status-bom::before { content: "✅ "; }

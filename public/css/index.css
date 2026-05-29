@@ -141,8 +141,22 @@ p {
 }
 
 main {
+    position: relative;
     padding-top: 20px;
 }
+
+main {
+    position: relative;
+}
+
+.seta-scroll {
+    position: absolute;
+    bottom: 30px;      
+    left: 10%;         
+    cursor: pointer;
+    z-index: 10;
+}
+
 
 .main-text {
     flex: 1;

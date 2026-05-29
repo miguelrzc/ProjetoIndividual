@@ -9,37 +9,20 @@ CREATE TABLE usuarios (
     data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE metas (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    fk_usuario INT UNIQUE, 
-    meta_total INT DEFAULT 20, 
-    CONSTRAINT fk_usu_meta FOREIGN KEY (fk_usuario) REFERENCES usuarios(id)
-);
-
-CREATE TABLE categorias (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL
-);
-
 CREATE TABLE devocional (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fk_usuario INT,
-    fk_categoria INT,
+    categoria VARCHAR(50), 
     versiculo_texto VARCHAR(255), 
     reflexao TEXT,
     data_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    
-    CONSTRAINT fk_usu_dev FOREIGN KEY (fk_usuario) REFERENCES usuarios(id),
-    CONSTRAINT fk_cat_dev FOREIGN KEY (fk_categoria) REFERENCES categorias(id)
+    CONSTRAINT fk_usu_dev FOREIGN KEY (fk_usuario) REFERENCES usuarios(id)
 );
 
 
-
-INSERT INTO categorias (nome) VALUES 
-('Fé'), 
-('Gratidão'), 
-('Oração'), 
-('Estudo Bíblico'),
-('Sabedoria'),
-('Propósito');
-
+CREATE TABLE comentarios (
+    fk_devocional INT PRIMARY KEY, 
+    texto_comentario TEXT NOT NULL,
+    data_comentario DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_dev_comento FOREIGN KEY (fk_devocional) REFERENCES devocional(id)
+);
