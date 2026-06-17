@@ -24,7 +24,7 @@ O projeto utiliza uma arquitetura baseada no padrão **MVC (Model-View-Controlle
 ---
 
 
-<img width="1440" height="818" alt="Captura de Tela 2026-06-17 às 13 56 34" src="https://github.com/user-attachments/assets/14131dbc-6fab-440d-aa63-290dbb157103" />
+[Index]<img width="1440" height="818" alt="Captura de Tela 2026-06-17 às 13 56 34" src="https://github.com/user-attachments/assets/14131dbc-6fab-440d-aa63-290dbb157103" />
 
 
 
