@@ -7,15 +7,6 @@
 
 O **Peniel** é um espaço digital focado no desenvolvimento pessoal e bem-estar, desenhado para incentivar o hábito intencional de leitura, reflexão e escrita diária. A plataforma atua como um diário interativo guiado que afasta o usuário de estímulos de dopamina rápida das redes sociais.
 
-<<<<<<< HEAD
-Index: https://private-user-images.githubusercontent.com/262813814/609335554-88a4a53c-67fd-496c-a19c-7e7cab28e31e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODE3MTUxNDIsIm5iZiI6MTc4MTcxNDg0MiwicGF0aCI6Ii8yNjI4MTM4MTQvNjA5MzM1NTU0LTg4YTRhNTNjLTY3ZmQtNDk2Yy1hMTljLTdlN2NhYjI4ZTMxZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwNjE3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDYxN1QxNjQ3MjJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02YmYzMmRhNzFkNTk5YzFhODU3ZGU1MmNjYTBjN2U1MDg2MzVjY2QzMDM4MTJhMDM5ZjliODQyYWZiY2FiN2U4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.vB9Rvp0JyAphVZcWriOMhn-G69HJ1RycpGC3ct7gKp8
-
-=======
-[Index: https://github.com/miguelrzc/ProjetoIndividual/issues/4
-](https://github.com/miguelrzc/ProjetoIndividual/issues/4)
->>>>>>> 5cafef8fa7dce0d9f2dd60b4edff0925dba8d0db
-
-
 ### 🌐 Vínculo com a ODS 3 da ONU (Saúde e Bem-Estar)
 O projeto conecta-se diretamente com a **Meta 3.4 da ODS 3**, atuando na promoção da saúde mental e do bem-estar subjetivo. Através da escrita expressiva e do acompanhamento analítico, a plataforma funciona como uma ferramenta de regulação emocional e autoconhecimento para reduzir o estresse e a ansiedade no cotidiano acadêmico e pessoal.
 
@@ -31,6 +22,10 @@ O projeto utiliza uma arquitetura baseada no padrão **MVC (Model-View-Controlle
 * **Banco de Dados (Model):** MySQL Server estruturado e persistido em ambiente de Máquina Virtual (Ubuntu Linux).
 
 ---
+
+
+<img width="1440" height="818" alt="Captura de Tela 2026-06-17 às 13 56 34" src="https://github.com/user-attachments/assets/14131dbc-6fab-440d-aa63-290dbb157103" />
+
 
 
 # 🚀 Como Executar o Projeto
