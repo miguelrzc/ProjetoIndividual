@@ -7,8 +7,8 @@
 
 O **Peniel** é um espaço digital focado no desenvolvimento pessoal e bem-estar, desenhado para incentivar o hábito intencional de leitura, reflexão e escrita diária. A plataforma atua como um diário interativo guiado que afasta o usuário de estímulos de dopamina rápida das redes sociais.
 
-Index: https://github.com/miguelrzc/ProjetoIndividual/issues/4
-
+[Index: https://github.com/miguelrzc/ProjetoIndividual/issues/4
+](https://github.com/miguelrzc/ProjetoIndividual/issues/4)
 
 
 ### 🌐 Vínculo com a ODS 3 da ONU (Saúde e Bem-Estar)
